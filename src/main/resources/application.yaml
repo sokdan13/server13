@@ -1,0 +1,16 @@
+ktor:
+  application:
+    modules:
+      - com.example.ApplicationKt.module
+  deployment:
+    port: ${PORT}
+  jwt:
+    secret: $JWT_SECRET
+    issuer: "http://localhost:8080"
+    audience: "http://localhost:8080"
+    realm: "Access protected routes"
+    expiry: "900000"
+  postgres:
+    url: $POSTGRES_URL
+    user: $POSTGRES_USER
+    password: $POSTGRES_PASSWORD
