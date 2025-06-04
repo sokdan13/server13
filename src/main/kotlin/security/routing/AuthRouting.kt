@@ -133,7 +133,7 @@ fun Application.authRouting(
                 )
             }
         }
-        post("signin") {
+        post("/signin") {
             val requestData = kotlin.runCatching<AuthRequest?> { call.receiveNullable<AuthRequest>() }.getOrNull() ?: run {
                 call.respond(
                     HttpStatusCode.BadRequest, AuthResponse<Unit>(
